@@ -155,7 +155,7 @@ _equals.addEventListener("click", () => {
   console.log(num2);
   result = operate(num1, num2, operation);
   console.log(result);
-  primaryDisplay.textContent = result;
+  primaryDisplay.textContent = Math.round(result * 10) / 10;
 }
 )
 
