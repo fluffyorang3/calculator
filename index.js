@@ -1,6 +1,12 @@
+let selectedNum;
+let newElement;
 let num1;
 let num2;
 let operation;
+let displayValue;
+let currentlyTyping = "2";
+
+//OPERATION FUNCTIONS
 
 const add = function(num1, num2) {
   return num1 + num2;
@@ -17,6 +23,9 @@ const divide = function(num1, num2) {
   return num1 / num2;
 }
 
+
+//OPERATION SELECTOR
+
 function operate(num1, num2, operation) {
   if(operation == "+") {
     return add(num1, num2);
@@ -30,3 +39,122 @@ function operate(num1, num2, operation) {
     return "ERROR";
   }
 }
+
+//CLEAR FUNCTION
+
+function clear() {
+
+}
+
+
+const buttonMapping = {
+  '_1': 1,
+  '_2': 2,
+  '_3': 3,
+  '_4': 4,
+  '_5': 5,
+  '_6': 6,
+  '_7': 7,
+  '_8': 8,
+  '_9': 9,
+  '_0': 0,
+  '_clear': clear(),
+  '_divide': "/",
+  '_multiply': "*",
+  '_subtract': "-",
+  '_add': "+",
+  '_equals': operate(),
+}
+
+buttonKeys = Object.keys(buttonMapping);
+buttonValues = Object.values(buttonMapping);
+
+console.log(buttonKeys);
+console.log(buttonValues);
+
+const secondaryDisplay = document.querySelector(".calculator-body-screen-secondary")
+const primaryDisplay = document.querySelector(".calculator-body-screen-primary")
+
+_1.addEventListener("click", () => {
+  secondaryDisplay.textContent += 1;
+  
+})
+
+_2.addEventListener("click", () => {
+  secondaryDisplay.textContent += 2;
+})
+
+_3.addEventListener("click", () => {
+  secondaryDisplay.textContent += 3;
+})
+
+_4.addEventListener("click", () => {
+  secondaryDisplay.textContent += 4;
+})
+
+_5.addEventListener("click", () => {
+  secondaryDisplay.textContent += 5;
+})
+
+_6.addEventListener("click", () => {
+  secondaryDisplay.textContent += 6;
+})
+
+_7.addEventListener("click", () => {
+  secondaryDisplay.textContent += 7;
+})
+
+_8.addEventListener("click", () => {
+  secondaryDisplay.textContent += 8;
+})
+
+_9.addEventListener("click", () => {
+  secondaryDisplay.textContent += 9;
+})
+
+_0.addEventListener("click", () => {
+  secondaryDisplay.textContent += 0;
+})
+
+_divide.addEventListener("click", () => {
+  secondaryDisplay.textContent += "/";
+  operation = "/"
+})
+
+_multiply.addEventListener("click", () => {
+  secondaryDisplay.textContent += "*";
+  operation = "*"
+})
+
+_subtract.addEventListener("click", () => {
+  secondaryDisplay.textContent += "-";
+  operation = "-"
+})
+
+_add.addEventListener("click", () => {
+  secondaryDisplay.textContent += "+";
+  operation = "+"
+})
+
+_clear.addEventListener("click", () => {
+  secondaryDisplay.textContent = "";
+  primaryDisplay.textContent = "";
+  operation = "";
+})
+
+_equals.addEventListener("click", () => {
+  let result = eval(secondaryDisplay.textContent)
+  primaryDisplay.textContent = result;
+}
+)
+
+
+
+
+
+
+
+
+
+
+

@@ -10,7 +10,6 @@ body {
 .container{
   display: flex;
   justify-content: center;
-  border-style: solid;
   align-items: center;
 }
 
@@ -121,6 +120,7 @@ body {
   box-shadow: -3px -3px 4px 2px #ffffff, 
               3px 3px 4px 2px #787878;
 }
+
 .rectangle {
   display: flex;
   justify-content: center;
