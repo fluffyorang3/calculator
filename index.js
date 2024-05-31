@@ -117,33 +117,44 @@ _0.addEventListener("click", () => {
 })
 
 _divide.addEventListener("click", () => {
+  num1 = secondaryDisplay.textContent
   secondaryDisplay.textContent += "/";
   operation = "/"
 })
 
 _multiply.addEventListener("click", () => {
-  secondaryDisplay.textContent += "*";
+  num1 = secondaryDisplay.textContent
+  secondaryDisplay.textContent += "x";
   operation = "*"
 })
 
 _subtract.addEventListener("click", () => {
+  num1 = secondaryDisplay.textContent
   secondaryDisplay.textContent += "-";
   operation = "-"
 })
 
 _add.addEventListener("click", () => {
+  num1 = secondaryDisplay.textContent
   secondaryDisplay.textContent += "+";
   operation = "+"
 })
 
 _clear.addEventListener("click", () => {
+  num1 = secondaryDisplay.textContent
   secondaryDisplay.textContent = "";
   primaryDisplay.textContent = "";
   operation = "";
 })
 
 _equals.addEventListener("click", () => {
-  let result = eval(secondaryDisplay.textContent)
+  console.log(num1);
+  console.log(num1.length);
+  let firstPart = secondaryDisplay.textContent;
+  num2 = firstPart.slice(num1.length + 1)
+  console.log(num2);
+  result = operate(num1, num2, operation);
+  console.log(result);
   primaryDisplay.textContent = result;
 }
 )
